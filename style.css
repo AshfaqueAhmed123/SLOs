@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif; 
+}
+
+*::selection{
+    background-color: var(--light-blue);
+}
+
+:root{
+    --blue:  rgb(48, 48, 197);
+    --dark-blue:  rgb(11, 11, 98);
+    --light-blue: rgb(153, 153, 232);
+}
+
+
+.hoverable:hover{
+    opacity: 0.70;
+}
+
+.remove{
+    display: none !important;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+    overflow-x: hidden;
+}
+
+header{
+    width: 100%;
+    height: 10%;
+    background-color:var(--blue);
+}
+
+header nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header nav .logo{
+    font-size: xx-large;
+    font-weight: 700;
+    color: white;
+}
+
+
+header nav .search-bar input{
+    min-width: 250px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: large;
+}
+
+header nav .search-bar button{
+    padding: 8px 30px;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: large;
+    background-color: var(--dark-blue);
+    color:white;
+    transition: all .2s;
+}
+
+
+header nav .search-bar button:hover{
+    opacity: 0.70;
+}
+
+main{
+    width: 100%;
+    min-height: 90%;
+    max-height: max-content;
+}
+
+main .cards-container{
+    width: 100%;
+    height: 100%;
+    padding:40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+main .cards-container .card{
+    min-width: 200px;
+    min-height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    padding: 20px;
+}
+main .cards-container .card .title{
+    font-size: large;
+    padding: 10px;
+    text-transform: uppercase;
+}
+main .cards-container .card .buttons{
+    position: absolute;
+    bottom: 20px;
+    padding: 20px;
+}
+
+main .cards-container .card .buttons button{
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    font-size: large;
+    cursor: pointer;
+}
+
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    color: white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    padding: 20px;
+    
+}
+
+@media screen and (max-width:450px) {
+    body{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    header{
+        padding: 0px;
+        background-color: var(--blue);
+        height: 15%;
+    }
+    header nav{
+        display: grid;
+        place-items: center;
+    }  
+
+    header  nav .search-bar{
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    header  nav .search-bar input{
+        width: 80%;
+        margin-right: 5px;
+    }
+
+    header nav .search-bar button:hover{
+        opacity: 1 !important;
+    }
+
+    .cards-container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) !important;
+        padding: 10px !important;
+        gap:10px !important;
+    }
+    .card{
+       width: 95vw !important;
+       height: 300px;
+    }
+}
