@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const form = document.querySelector(".search-form");
+const form = document.querySelector(".search-from");
 const input = document.getElementById('search-input');
 form.addEventListner("submit",(e)=>{
 
